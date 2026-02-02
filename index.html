@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
             <div class="logo">
@@ -16,37 +17,39 @@
             </div>
             <div class="nav-links">
                 <div class="subject-links">
-                    <button class="subject-btn" data-subject="math">Math</button>
-                    <button class="subject-btn" data-subject="reading">Reading</button>
-                    <button class="subject-btn" data-subject="science">Science</button>
-                    <button class="subject-btn" data-subject="history">History</button>
+                    <button type="button" class="subject-btn" data-subject="math">Math</button>
+                    <button type="button" class="subject-btn" data-subject="reading">Reading</button>
+                    <button type="button" class="subject-btn" data-subject="science">Science</button>
+                    <button type="button" class="subject-btn" data-subject="history">History</button>
                 </div>
                 <div class="auth-links">
-                    <button class="btn btn-primary">Login / Sign Up</button>
+                    <button type="button" class="btn btn-primary">Login / Sign Up</button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <div id="subject-content" class="subject-panel">
+    <!-- Subject Panel -->
+    <div id="subject-content" class="subject-panel" aria-hidden="true">
         <div class="container">
-            <button id="close-panel" class="close-btn">&times;</button>
+            <button id="close-panel" class="close-btn" aria-label="Close Panel">&times;</button>
             <div id="panel-body"></div>
         </div>
     </div>
 
+    <!-- Hero Section -->
     <header class="hero">
         <div class="container hero-content">
             <div class="badge">Free Tutoring Sessions</div>
             <h1>Online <span class="text-gradient">Math Tutoring</span></h1>
             <p class="subtitle">K–6 • NYC Curriculum • Library-Supported. We offer foundational support to build confidence and skill in young learners.</p>
             <div class="hero-btns">
-                <button class="btn btn-primary lg">View Curriculum</button>
-                <button class="btn btn-outline lg">Register Online</button>
+                <button type="button" class="btn btn-primary lg">View Curriculum</button>
+                <button type="button" class="btn btn-outline lg">Register Online</button>
             </div>
         </div>
     </header>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
