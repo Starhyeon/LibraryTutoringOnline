@@ -33,12 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Logo click → reset hero
-    logo.addEventListener('click', () => {
+    logo.addEventListener('click', (e) => {
+        e.preventDefault();
         panel.classList.remove('active');
         panelBody.innerHTML = '';
     });
 
-    // Floating hero dots (like sushi site)
+    // Floating hero dots
     for (let i = 0; i < 15; i++) {
         const dot = document.createElement('div');
         dot.classList.add('hero-dot');
