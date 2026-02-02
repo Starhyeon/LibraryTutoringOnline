@@ -1,51 +1,59 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const subjectBtns = document.querySelectorAll('.subject-btn');
-  const panel = document.getElementById('subject-content');
-  const panelBody = document.getElementById('panel-body');
-  const closeBtn = document.getElementById('close-panel');
-  const logo = document.querySelector('.logo');
-  const hero = document.querySelector('.hero');
+// Fade-in
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('fade-overlay').style.display = 'none';
+    document.querySelector('.hero').classList.add('show');
+  }, 1500);
+});
 
-  const subjects = {
-    math: '<h2>Math Tutoring</h2><p>Our math program covers everything from basic arithmetic to advanced problem solving for K-6 students.</p>',
-    reading: '<h2>Reading Tutoring</h2><p>Developing strong literacy skills through guided reading and comprehension exercises.</p>',
-    science: '<h2>Science Tutoring</h2><p>Exploring the wonders of science with interactive lessons aligned with the NYC curriculum.</p>',
-    history: '<h2>History Tutoring</h2><p>Bringing history to life through engaging storytelling and critical analysis.</p>'
-  };
+// Navigation buttons
+const navButtons = document.querySelectorAll('.nav-btn');
+const sections = document.querySelectorAll('.section, .hero');
 
-  subjectBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      panelBody.innerHTML = subjects[btn.dataset.subject];
-      panel.classList.add('active');
-    });
+navButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.section;
+    sections.forEach(sec => sec.classList.remove('show'));
+    document.getElementById(target).classList.add('show');
+    window.scrollTo({top: 0, behavior: 'smooth'});
   });
+});
 
-  closeBtn.addEventListener('click', () => {
-    panel.classList.remove('active');
-    panelBody.innerHTML = '';
+// Hero buttons
+document.querySelectorAll('.hero-btns button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.section;
+    sections.forEach(sec => sec.classList.remove('show'));
+    document.getElementById(target).classList.add('show');
+    window.scrollTo({top:0, behavior:'smooth'});
   });
+});
 
-  window.addEventListener('click', e => {
-    if(e.target === panel){
-      panel.classList.remove('active');
-      panelBody.innerHTML = '';
-    }
+// Learning section grade -> subject
+const gradeBoxes = document.querySelectorAll('.grade-box');
+const subjectPanel = document.querySelector('.subject-panel');
+const subjectTitle = document.getElementById('subject-title');
+const subjectContent = document.getElementById('subject-content');
+
+gradeBoxes.forEach(box => {
+  box.addEventListener('click', () => {
+    subjectPanel.classList.remove('hidden');
+    subjectTitle.textContent = `Grade ${box.dataset.grade}`;
+    subjectContent.innerHTML = '';
   });
+});
 
-  logo.addEventListener('click', e => {
-    e.preventDefault();
-    panel.classList.remove('active');
-    panelBody.innerHTML = '';
+// Subject buttons
+const subjectButtons = document.querySelectorAll('.subject-btn');
+subjectButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const subject = btn.dataset.subject;
+    const subjects = {
+      math: '<p>Math content goes here.</p>',
+      reading: '<p>Reading content goes here.</p>',
+      science: '<p>Science content goes here.</p>',
+      history: '<p>History content goes here.</p>'
+    };
+    subjectContent.innerHTML = subjects[subject] || '<p>Coming soon!</p>';
   });
-
-  // Floating hero dots
-  for(let i=0;i<15;i++){
-    const dot = document.createElement('div');
-    dot.className='hero-dot';
-    dot.style.left = `${Math.random()*100}%`;
-    dot.style.top = `${Math.random()*100}%`;
-    dot.style.width = dot.style.height = `${Math.random()*6+4}px`;
-    dot.style.animationDuration = `${5+Math.random()*5}s`;
-    hero.appendChild(dot);
-  }
 });
