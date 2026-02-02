@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const panel = document.getElementById('subject-content');
     const panelBody = document.getElementById('panel-body');
     const closeBtn = document.getElementById('close-panel');
+    const logo = document.querySelector('.logo');
 
     const subjects = {
         math: '<h2>Math Tutoring</h2><p>Our math program covers everything from basic arithmetic to advanced problem solving for K-6 students.</p>',
@@ -27,5 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === panel) {
             panel.classList.remove('active');
         }
+    });
+
+    // LOGO CLICK → go back to initial hero
+    logo.addEventListener('click', () => {
+        panel.classList.remove('active'); // hide panel
+        panelBody.innerHTML = '';        // clear content
     });
 });
