@@ -9,12 +9,12 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
         <div class="container nav-container">
-            <div class="logo" role="button" tabindex="0">
+            <a href="#" class="logo">
                 <span class="logo-icon" aria-hidden="true">✨</span>
                 <span class="logo-text">North Bellmore Tutoring</span>
-            </div>
+            </a>
             <div class="nav-links">
                 <div class="subject-links">
                     <button type="button" class="subject-btn" data-subject="math">Math</button>
@@ -29,26 +29,28 @@
         </div>
     </nav>
 
-    <!-- Subject Panel -->
-    <section id="subject-content" class="subject-panel" aria-hidden="true">
-        <div class="container">
-            <button id="close-panel" class="close-btn" aria-label="Close Panel">&times;</button>
-            <div id="panel-body"></div>
-        </div>
-    </section>
-
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="container hero-content">
-            <div class="badge">Free Tutoring Sessions</div>
-            <h1>Online <span class="text-gradient">Math Tutoring</span></h1>
-            <p class="subtitle">K–6 • NYC Curriculum • Library-Supported. We offer foundational support to build confidence and skill in young learners.</p>
-            <div class="hero-btns">
-                <button type="button" class="btn btn-primary lg">View Curriculum</button>
-                <button type="button" class="btn btn-outline lg">Register Online</button>
+    <main>
+        <!-- Subject Panel -->
+        <section id="subject-content" class="subject-panel">
+            <div class="container">
+                <button id="close-panel" class="close-btn" aria-label="Close Panel">&times;</button>
+                <div id="panel-body"></div>
             </div>
-        </div>
-    </header>
+        </section>
+
+        <!-- Hero Section -->
+        <header class="hero">
+            <div class="container hero-content">
+                <div class="badge">Free Tutoring Sessions</div>
+                <h1>Online <span class="text-gradient">Math Tutoring</span></h1>
+                <p class="subtitle">K–6 • NYC Curriculum • Library-Supported. We offer foundational support to build confidence and skill in young learners.</p>
+                <div class="hero-btns">
+                    <button type="button" class="btn btn-primary lg">View Curriculum</button>
+                    <button type="button" class="btn btn-outline lg">Register Online</button>
+                </div>
+            </div>
+        </header>
+    </main>
 
     <!-- JavaScript -->
     <script src="script.js" defer></script>
