@@ -5,7 +5,6 @@
     --primary-foreground: #000000;
     --muted: #a1a1aa;
     --border: rgba(255, 255, 255, 0.1);
-    --card-bg: rgba(255, 255, 255, 0.05);
 }
 
 * {
@@ -29,6 +28,7 @@ body {
     padding: 0 2rem;
 }
 
+/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
@@ -54,7 +54,8 @@ body {
     gap: 0.5rem;
     font-weight: 700;
     font-size: 1.25rem;
-    cursor: pointer;
+    text-decoration: none;
+    color: var(--foreground);
 }
 
 .logo-icon {
@@ -81,7 +82,6 @@ body {
     font-size: 0.875rem;
     font-weight: 500;
     cursor: pointer;
-    padding: 0;
     position: relative;
     transition: color 0.2s ease-in-out;
 }
@@ -103,6 +103,7 @@ body {
     width: 100%;
 }
 
+/* Subject Panel */
 .subject-panel {
     position: fixed;
     top: 64px;
@@ -159,6 +160,7 @@ body {
     line-height: 1.6;
 }
 
+/* Buttons */
 .btn {
     padding: 0.5rem 1rem;
     border-radius: 9999px;
@@ -192,6 +194,7 @@ body {
     font-size: 1.125rem;
 }
 
+/* Hero */
 .hero {
     height: calc(100vh - 64px);
     display: flex;
@@ -282,20 +285,12 @@ h1 {
     gap: 1rem;
 }
 
-.features {
-    display: none;
-}
-
 @media (max-width: 768px) {
-    h1 {
-        font-size: 3rem;
-    }
-    .subject-links {
-        display: none;
-    }
+    h1 { font-size: 3rem; }
+    .subject-links { display: none; }
 }
 
-/* Optional: Floating hero dots like sushi site */
+/* Floating hero dots */
 .hero-dot {
     position: absolute;
     border-radius: 50%;
