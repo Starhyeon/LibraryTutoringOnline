@@ -20,7 +20,7 @@ body {
     color: var(--foreground);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    overflow: hidden;
+    overflow-x: hidden; /* fixed from overflow:hidden */
 }
 
 .container {
@@ -81,11 +81,11 @@ body {
     font-weight: 500;
     cursor: pointer;
     padding: 0;
-    transition: color 0.2s;
+    transition: color 0.2s ease-in-out; /* added ease-in-out */
 }
 
 .subject-btn:hover {
-    color: white;
+    color: var(--primary);
 }
 
 .subject-panel {
@@ -98,7 +98,7 @@ body {
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
     z-index: 999;
-    overflow: hidden;
+    overflow-y: auto; /* changed overflow hidden -> auto */
     transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -143,13 +143,13 @@ body {
     border-radius: 9999px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.2s ease-in-out;
     border: 1px solid transparent;
 }
 
 .btn-primary {
-    background: white;
-    color: black;
+    background: var(--primary);
+    color: var(--primary-foreground);
 }
 
 .btn-primary:hover {
@@ -159,7 +159,7 @@ body {
 .btn-outline {
     background: transparent;
     border-color: var(--border);
-    color: white;
+    color: var(--foreground);
 }
 
 .btn-outline:hover {
@@ -178,7 +178,7 @@ body {
     justify-content: center;
     text-align: center;
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden; /* changed from overflow:hidden */
     padding-top: 80px;
 }
 
@@ -207,7 +207,7 @@ body {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border);
     border-radius: 9999px;
-    color: white;
+    color: var(--foreground);
     font-size: 0.875rem;
     margin-bottom: 2rem;
 }
@@ -243,6 +243,10 @@ h1 {
 }
 
 @media (max-width: 768px) {
-    h1 { font-size: 3rem; }
-    .subject-links { display: none; }
+    h1 {
+        font-size: 3rem;
+    }
+    .subject-links {
+        display: none;
+    }
 }
