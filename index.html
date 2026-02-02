@@ -3,54 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>North Bellmore Tutoring | Online Math Tutoring</title>
+  <title>North Bellmore Tutoring</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- Overlay for fade-in -->
+  <div id="fade-overlay"></div>
+
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="container nav-container">
-      <a href="#" class="logo">
-        <span class="logo-icon">✨</span>
-        <span class="logo-text">North Bellmore Tutoring</span>
-      </a>
+      <div class="logo">North Bellmore Tutoring</div>
       <div class="nav-links">
-        <div class="subject-links">
-          <button type="button" class="subject-btn" data-subject="math">Math</button>
-          <button type="button" class="subject-btn" data-subject="reading">Reading</button>
-          <button type="button" class="subject-btn" data-subject="science">Science</button>
-          <button type="button" class="subject-btn" data-subject="history">History</button>
-        </div>
-        <div class="auth-links">
-          <button type="button" class="btn btn-primary">Login / Sign Up</button>
-        </div>
+        <button class="nav-btn" data-section="learning">Learning</button>
+        <button class="nav-btn" data-section="games">Games</button>
+        <button class="nav-btn" data-section="about">About Us</button>
       </div>
     </div>
   </nav>
 
-  <!-- Subject Panel -->
-  <section id="subject-content" class="subject-panel">
-    <div class="container">
-      <button id="close-panel" class="close-btn">&times;</button>
-      <div id="panel-body"></div>
-    </div>
-  </section>
+  <!-- Main Sections -->
+  <main>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="container hero-content">
-      <div class="badge">Free Tutoring Sessions</div>
-      <h1>Online <span class="text-gradient">Math Tutoring</span></h1>
-      <p class="subtitle">K–6 • NYC Curriculum • Library-Supported. We offer foundational support to build confidence and skill in young learners.</p>
-      <div class="hero-btns">
-        <button class="btn btn-primary lg">View Curriculum</button>
-        <button class="btn btn-outline lg">Register Online</button>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="container hero-content">
+        <h1>Online <span class="text-gradient">Math Tutoring</span></h1>
+        <p class="subtitle">K–6 • NYC Curriculum • Library-Supported</p>
+        <p class="subtitle">We offer foundational support to build confidence and skill in young learners.</p>
+        <div class="hero-btns">
+          <button class="btn btn-primary" data-section="learning">Start Learning</button>
+          <button class="btn btn-outline" data-section="games">Explore Games</button>
+        </div>
       </div>
-    </div>
-  </header>
+    </section>
 
+    <!-- Learning Section -->
+    <section id="learning" class="section hidden">
+      <div class="container section-content">
+        <h2>Learning</h2>
+        <div class="grade-grid">
+          <button class="grade-box" data-grade="K">K</button>
+          <button class="grade-box" data-grade="1">1</button>
+          <button class="grade-box" data-grade="2">2</button>
+          <button class="grade-box" data-grade="3">3</button>
+          <button class="grade-box" data-grade="4">4</button>
+          <button class="grade-box" data-grade="5">5</button>
+          <button class="grade-box" data-grade="6">6</button>
+        </div>
+        <div class="subject-panel hidden">
+          <h3 id="subject-title"></h3>
+          <div class="subject-buttons">
+            <button class="subject-btn" data-subject="math">Math</button>
+            <button class="subject-btn" data-subject="reading">Reading</button>
+            <button class="subject-btn" data-subject="science">Science</button>
+            <button class="subject-btn" data-subject="history">History</button>
+          </div>
+          <div id="subject-content"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="games" class="section hidden">
+      <div class="container section-content">
+        <h2>Educational Games</h2>
+        <p>Coming soon! Fun educational games to help learning.</p>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section hidden">
+      <div class="container section-content">
+        <h2>About Us</h2>
+        <p>North Bellmore Tutoring is dedicated to providing K–6 students with high-quality online tutoring, aligned with the NYC curriculum.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- JS -->
   <script src="script.js" defer></script>
 </body>
 </html>
